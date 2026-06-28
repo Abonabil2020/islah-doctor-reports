@@ -252,6 +252,18 @@
       <div class="result-unit">دقيقة لكل حالة</div>
     </div>
 
+    <div class="result-box">
+      <div class="result-label">📋 عدد الكشوفات</div>
+      <div class="result-value" id="res-cases">—</div>
+      <div class="result-unit">حالة</div>
+    </div>
+
+    <div class="result-box">
+      <div class="result-label">📅 التاريخ واليوم</div>
+      <div class="result-value" style="font-size:clamp(1.4rem,6vw,2.2rem)" id="res-date">—</div>
+      <div class="result-unit" id="res-day"></div>
+    </div>
+
   </div>
 
 </div>
@@ -301,6 +313,16 @@ function calculate() {
   document.getElementById('res-duration').textContent = durValue;
   document.getElementById('res-duration-unit').textContent = durUnit;
   document.getElementById('res-avg').textContent      = avgDisplay;
+
+  // عدد الكشوفات
+  document.getElementById('res-cases').textContent = cases;
+
+  // التاريخ واليوم
+  const now = new Date();
+  const days = ['الأحد','الاثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
+  const dateStr = now.toLocaleDateString('ar-EG', {year:'numeric', month:'long', day:'numeric'});
+  document.getElementById('res-date').textContent = dateStr;
+  document.getElementById('res-day').textContent = days[now.getDay()];
 
   document.getElementById('results').classList.add('show');
   document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
