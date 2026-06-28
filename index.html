@@ -132,7 +132,7 @@
   /* RESULT BOXES */
   .results {
     display: none;
-    gap: 16px;
+    gap: 10px;
     flex-direction: column;
   }
   .results.show { display: flex; }
@@ -154,30 +154,30 @@
 
   .result-box {
     background: #fff;
-    border-radius: 16px;
+    border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-    padding: 28px 20px;
+    padding: 14px 16px;
     text-align: center;
-    border-top: 5px solid #ff6665;
+    border-top: 4px solid #ff6665;
   }
   .result-box .result-label {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 700;
     color: #6b7a8d;
-    margin-bottom: 12px;
+    margin-bottom: 6px;
     letter-spacing: 0.01em;
   }
   .result-box .result-value {
-    font-size: clamp(2.8rem, 12vw, 4.5rem);
+    font-size: clamp(1.8rem, 7vw, 2.8rem);
     font-weight: 900;
     color: #ff6665;
     line-height: 1;
   }
   .result-box .result-unit {
-    font-size: 1rem;
+    font-size: 0.82rem;
     font-weight: 600;
     color: #aab;
-    margin-top: 8px;
+    margin-top: 4px;
   }
 
   /* error */
@@ -241,15 +241,9 @@
     <div class="doctor-name-badge">نتائج الدكتور / <span id="res-name">—</span></div>
 
     <div class="result-box">
-      <div class="result-label">⏱ مدة وجود الطبيب</div>
-      <div class="result-value" id="res-duration">—</div>
-      <div class="result-unit" id="res-duration-unit"></div>
-    </div>
-
-    <div class="result-box">
-      <div class="result-label">🩺 متوسط وقت كل حالة</div>
-      <div class="result-value" id="res-avg">—</div>
-      <div class="result-unit">دقيقة لكل حالة</div>
+      <div class="result-label">📅 التاريخ واليوم</div>
+      <div class="result-value" style="font-size:clamp(1.2rem,5vw,1.8rem)" id="res-date">—</div>
+      <div class="result-unit" id="res-day"></div>
     </div>
 
     <div class="result-box">
@@ -259,9 +253,15 @@
     </div>
 
     <div class="result-box">
-      <div class="result-label">📅 التاريخ واليوم</div>
-      <div class="result-value" style="font-size:clamp(1.4rem,6vw,2.2rem)" id="res-date">—</div>
-      <div class="result-unit" id="res-day"></div>
+      <div class="result-label">⏱ مدة وجود الطبيب</div>
+      <div class="result-value" id="res-duration">—</div>
+      <div class="result-unit" id="res-duration-unit"></div>
+    </div>
+
+    <div class="result-box">
+      <div class="result-label">🩺 متوسط وقت كل حالة</div>
+      <div class="result-value" id="res-avg">—</div>
+      <div class="result-unit">دقيقة لكل حالة</div>
     </div>
 
   </div>
